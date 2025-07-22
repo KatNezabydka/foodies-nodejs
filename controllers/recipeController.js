@@ -26,6 +26,9 @@ const mapRecipe = (recipeData) => {
   };
 };
 
+/**
+ * @deprecated Use `getRecipeList` instead.
+ */
 export const getAllRecipes = async (req, res) => {
   const { page = 1, limit = 12, ...query } = req.query;
   const { recipes, total } = await recipesService.getAllRecipes({

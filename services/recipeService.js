@@ -113,7 +113,6 @@ export const getRecipeList = async ({
                                       query,
                                       page,
                                       limit,
-                                      ownerId,
                                     }) => {
   const { category, area, ingredient } = query;
   const offset = (page - 1) * limit;
@@ -145,22 +144,8 @@ export const getRecipeList = async ({
     ]
     : [];
 
-  const ownerFilter = ownerId
-    ? [
-      {
-        model: User,
-        as: 'owner',
-        where: { id: ownerId },
-        attributes: ['id', 'name', 'avatarURL'],
-        required: true,
-      },
-    ]
-    : [
-      ownerInclude,
-    ];
-
   const include = [
-    ...ownerFilter,
+    ownerInclude,
     categoryFilter,
     areaFilter,
     ...ingredientFilter,
