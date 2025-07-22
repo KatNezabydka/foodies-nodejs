@@ -22,6 +22,16 @@ const Recipe = sequelize.define('recipe', {
   time: DataTypes.STRING,
 });
 
+Recipe.prototype.toRecipeListItem = function () {
+  return {
+    id: this.id,
+    title: this.title,
+    description: this.description,
+    thumb: this.thumb,
+    owner: this.owner,
+  };
+};
+
 // Recipe.sync({ alter: true });
 
 export default Recipe;

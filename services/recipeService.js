@@ -38,12 +38,12 @@ const ingredientsInclude = {
 };
 
 export const getAllRecipes = async ({
-  query,
-  page,
-  limit,
-  ownerId,
-  attributes,
-}) => {
+                                      query,
+                                      page,
+                                      limit,
+                                      ownerId,
+                                      attributes,
+                                    }) => {
   const { category, area, ingredient } = query;
   const offset = (page - 1) * limit;
   const categoryFilter = {
@@ -57,40 +57,40 @@ export const getAllRecipes = async ({
 
   const ingredientFilter = ingredient
     ? [
-        {
-          model: Ingredient,
-          as: 'ingredientFilter',
-          where: { name: { [Op.iLike]: ingredient } },
-          required: true,
+      {
+        model: Ingredient,
+        as: 'ingredients',
+        where: { name: { [Op.iLike]: ingredient } },
+        required: true,
+        attributes: [],
+        through: {
           attributes: [],
-          through: {
-            attributes: [],
-          },
         },
-      ]
+      },
+    ]
     : [];
 
   const ownerFilter = ownerId
     ? [
-        {
-          model: User,
-          as: 'owner',
-          where: { id: ownerId },
-          required: true,
-          attributes: [],
-        },
-      ]
+      {
+        model: User,
+        as: 'owner',
+        where: { id: ownerId },
+        required: true,
+        attributes: [],
+      },
+    ]
     : [];
 
   const include = ownerId
     ? ownerFilter
     : [
-        categoryFilter,
-        areaFilter,
-        ...ingredientFilter,
-        ownerInclude,
-        ingredientsInclude,
-      ];
+      categoryFilter,
+      areaFilter,
+      ...ingredientFilter,
+      ownerInclude,
+      ingredientsInclude,
+    ];
 
   const total = await Recipe.count({
     include: ownerId
@@ -104,6 +104,76 @@ export const getAllRecipes = async ({
     limit,
     offset,
     attributes,
+  });
+
+  return { recipes, total };
+};
+
+export const getRecipeList = async ({
+                                      query,
+                                      page,
+                                      limit,
+                                      ownerId,
+                                    }) => {
+  const { category, area, ingredient } = query;
+  const offset = (page - 1) * limit;
+
+  const categoryFilter = {
+    ...categoryInclude,
+    ...(category ? { where: { name: { [Op.iLike]: category } } } : {}),
+    attributes: [],
+    required: !!category,
+  };
+
+  const areaFilter = {
+    ...areaInclude,
+    ...(area ? { where: { name: { [Op.iLike]: area } } } : {}),
+    attributes: [],
+    required: !!area,
+  };
+
+  const ingredientFilter = ingredient
+    ? [
+      {
+        model: Ingredient,
+        as: 'ingredients',
+        where: { name: { [Op.iLike]: ingredient } },
+        attributes: [],
+        through: { attributes: [] },
+        required: true,
+      },
+    ]
+    : [];
+
+  const ownerFilter = ownerId
+    ? [
+      {
+        model: User,
+        as: 'owner',
+        where: { id: ownerId },
+        attributes: ['id', 'name', 'avatarURL'],
+        required: true,
+      },
+    ]
+    : [
+      ownerInclude,
+    ];
+
+  const include = [
+    ...ownerFilter,
+    categoryFilter,
+    areaFilter,
+    ...ingredientFilter,
+  ];
+
+  const total = await Recipe.count({ include });
+
+  const recipes = await Recipe.findAll({
+    include,
+    order: [['id', 'ASC']],
+    limit,
+    offset,
+    attributes: ['id', 'title', 'description', 'thumb', 'ownerId'],
   });
 
   return { recipes, total };
@@ -130,16 +200,15 @@ export const createRecipe = async (data, getIngredientsData) => {
 export const getTopRecipeIds = async (limit = 4) => {
   const results = await sequelize.query(
     `
-    SELECT "recipeId", COUNT(*) as "favoritesCount"
-    FROM user_favorites
-    GROUP BY "recipeId"
-    ORDER BY "favoritesCount" DESC
-    LIMIT :limit
-  `,
+        SELECT "recipeId", COUNT(*) as "favoritesCount"
+        FROM user_favorites
+        GROUP BY "recipeId"
+        ORDER BY "favoritesCount" DESC LIMIT :limit
+    `,
     {
       replacements: { limit },
       type: sequelize.QueryTypes.SELECT,
-    }
+    },
   );
 
   return results.map((result) => result.recipeId);
@@ -167,7 +236,7 @@ export const getRecipesByIds = async (recipeIds) => {
     order: [
       [
         sequelize.literal(
-          `ARRAY_POSITION(ARRAY[${recipeIds.reverse().join(',')}], "recipe"."id")`
+          `ARRAY_POSITION(ARRAY[${recipeIds.reverse().join(',')}], "recipe"."id")`,
         ),
         'DESC',
       ],
@@ -178,18 +247,17 @@ export const getRecipesByIds = async (recipeIds) => {
 export const getTopRecipeIdsByUser = async (userId, limit = 4) => {
   const results = await sequelize.query(
     `
-    SELECT r.id
-    FROM recipes r
-    LEFT JOIN user_favorites uf ON r.id = uf."recipeId"
-    WHERE r."ownerId" = :userId
-    GROUP BY r.id
-    ORDER BY COUNT(uf."recipeId") DESC
-    LIMIT :limit
+        SELECT r.id
+        FROM recipes r
+                 LEFT JOIN user_favorites uf ON r.id = uf."recipeId"
+        WHERE r."ownerId" = :userId
+        GROUP BY r.id
+        ORDER BY COUNT(uf."recipeId") DESC LIMIT :limit
     `,
     {
       replacements: { userId, limit },
       type: sequelize.QueryTypes.SELECT,
-    }
+    },
   );
 
   return results.map((r) => r.id);
@@ -214,7 +282,7 @@ export const getTopRecipesByUser = async (userId, limit = 4) => {
     order: [
       [
         sequelize.literal(
-          `ARRAY_POSITION(ARRAY[${topIds.reverse().join(',')}], "recipe"."id")`
+          `ARRAY_POSITION(ARRAY[${topIds.reverse().join(',')}], "recipe"."id")`,
         ),
         'DESC',
       ],

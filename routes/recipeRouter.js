@@ -44,6 +44,8 @@ const recipeRouter = express.Router();
  */
 recipeRouter.get('/', recipesControllers.getAllRecipes);
 
+recipeRouter.get('/list', recipesControllers.getRecipeList);
+
 /**
  * @swagger
  * /recipes:

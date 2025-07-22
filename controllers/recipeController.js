@@ -42,6 +42,22 @@ export const getAllRecipes = async (req, res) => {
   res.json({ data, pagination });
 };
 
+export const getRecipeList = async (req, res) => {
+  const { page = 1, limit = 12, ...query } = req.query;
+  const { recipes, total } = await recipesService.getRecipeList({
+    query,
+    page,
+    limit,
+  });
+
+  if (!recipes) {
+    throw HttpError(404, 'Recipes not found');
+  }
+  const data = recipes.map(recipe => recipe.toRecipeListItem());
+  const pagination = getPagination(total, page, limit);
+  res.json({ data, pagination });
+};
+
 export const getUserRecipes = async (req, res) => {
   const { page = 1, limit = 12, ...query } = req.query;
   const id = Number(req.params.id);
@@ -100,7 +116,7 @@ export const createRecipe = async (req, res) => {
       ownerId,
       thumb,
     },
-    getIngredientsData
+    getIngredientsData,
   );
   if (!recipe) {
     throw HttpError(400, 'Failed to create recipe');
@@ -167,7 +183,7 @@ export const getFavoriteRecipes = async (req, res, next) => {
   const { total, data } = await recipesService.getFavoriteRecipes(
     userId,
     Number(page),
-    Number(limit)
+    Number(limit),
   );
 
   const pagination = getPagination(total, page, limit);
@@ -189,7 +205,7 @@ export const getPopularRecipes = async (req, res) => {
 
     const randomRecipes = await recipesService.getRandomRecipes(
       excludeIds,
-      neededCount
+      neededCount,
     );
 
     const randomIds = randomRecipes.map((recipe) => recipe.id);
@@ -205,6 +221,7 @@ export const getPopularRecipes = async (req, res) => {
 
 export default {
   getAllRecipes: ctrlWrapper(getAllRecipes),
+  getRecipeList: ctrlWrapper(getRecipeList),
   getRecipeById: ctrlWrapper(getRecipeById),
   getUserRecipes: ctrlWrapper(getUserRecipes),
   createRecipe: ctrlWrapper(createRecipe),
