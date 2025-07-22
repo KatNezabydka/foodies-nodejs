@@ -256,14 +256,14 @@ export const getTopRecipesByUser = async (userId, limit = 4) => {
       where: { ownerId: userId },
       order: sequelize.random(),
       limit,
-      attributes: ['id', 'title', 'description', 'thumb'],
+      attributes: ['id', 'thumb'],
     });
   }
 
   return Recipe.findAll({
     where: { id: topIds },
-    attributes: ['id', 'title', 'description', 'thumb'],
-    include: [ownerInclude],
+    attributes: ['id', 'thumb'],
+    // include: [ownerInclude],
     order: [
       [
         sequelize.literal(
