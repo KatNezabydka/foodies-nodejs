@@ -141,3 +141,5 @@ vite.config.ts.timestamp-*
 
 # Local History for Visual Studio Code
 .lh
+
+.DS_Store
