@@ -1,0 +1,352 @@
+[
+  {
+    "id": 1,
+    "name": "GoIT",
+    "avatarURL": null,
+    "email": "goit@gmail.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 2,
+    "name": "Foodies user",
+    "avatarURL": null,
+    "email": "user@gmail.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 3,
+    "name": "Larry Pageim",
+    "avatarURL": null,
+    "email": "larry@gmail.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 4,
+    "name": "Alice Johnson",
+    "avatarURL": null,
+    "email": "alice.johnson@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 5,
+    "name": "Bob Smith",
+    "avatarURL": null,
+    "email": "bob.smith@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 6,
+    "name": "Charlie Brown",
+    "avatarURL": null,
+    "email": "charlie.brown@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 7,
+    "name": "Diana Evans",
+    "avatarURL": null,
+    "email": "diana.evans@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 8,
+    "name": "Ethan Miller",
+    "avatarURL": null,
+    "email": "ethan.miller@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 9,
+    "name": "Fiona Clark",
+    "avatarURL": null,
+    "email": "fiona.clark@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 10,
+    "name": "George Harris",
+    "avatarURL": null,
+    "email": "george.harris@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 11,
+    "name": "Hannah Scott",
+    "avatarURL": null,
+    "email": "hannah.scott@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 12,
+    "name": "Ian Walker",
+    "avatarURL": null,
+    "email": "ian.walker@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 13,
+    "name": "Julia Adams",
+    "avatarURL": null,
+    "email": "julia.adams@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 14,
+    "name": "Kevin Baker",
+    "avatarURL": null,
+    "email": "kevin.baker@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 15,
+    "name": "Laura Nelson",
+    "avatarURL": null,
+    "email": "laura.nelson@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 16,
+    "name": "Michael Turner",
+    "avatarURL": null,
+    "email": "michael.turner@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 17,
+    "name": "Nina Perez",
+    "avatarURL": null,
+    "email": "nina.perez@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 18,
+    "name": "Oscar Reed",
+    "avatarURL": null,
+    "email": "oscar.reed@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 19,
+    "name": "Paula Morris",
+    "avatarURL": null,
+    "email": "paula.morris@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 20,
+    "name": "Quentin Brooks",
+    "avatarURL": null,
+    "email": "quentin.brooks@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 21,
+    "name": "Rachel Price",
+    "avatarURL": null,
+    "email": "rachel.price@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 22,
+    "name": "Samuel Bell",
+    "avatarURL": null,
+    "email": "samuel.bell@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 23,
+    "name": "Tina Foster",
+    "avatarURL": null,
+    "email": "tina.foster@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 24,
+    "name": "Ulysses Nash",
+    "avatarURL": null,
+    "email": "ulysses.nash@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 25,
+    "name": "Vanessa Knight",
+    "avatarURL": null,
+    "email": "vanessa.knight@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 26,
+    "name": "Walter Grant",
+    "avatarURL": null,
+    "email": "walter.grant@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 27,
+    "name": "Xena Armstrong",
+    "avatarURL": null,
+    "email": "xena.armstrong@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 28,
+    "name": "Yusuf Barrett",
+    "avatarURL": null,
+    "email": "yusuf.barrett@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 29,
+    "name": "Zara Bowen",
+    "avatarURL": null,
+    "email": "zara.bowen@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 30,
+    "name": "Aaron Hayes",
+    "avatarURL": null,
+    "email": "aaron.hayes@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 31,
+    "name": "Bella Webb",
+    "avatarURL": null,
+    "email": "bella.webb@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 32,
+    "name": "Caleb Stone",
+    "avatarURL": null,
+    "email": "caleb.stone@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 33,
+    "name": "Danielle Fox",
+    "avatarURL": null,
+    "email": "danielle.fox@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 34,
+    "name": "Edward Bishop",
+    "avatarURL": null,
+    "email": "edward.bishop@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 35,
+    "name": "Faith Maxwell",
+    "avatarURL": null,
+    "email": "faith.maxwell@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 36,
+    "name": "Gavin Doyle",
+    "avatarURL": null,
+    "email": "gavin.doyle@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 37,
+    "name": "Hailey Greene",
+    "avatarURL": null,
+    "email": "hailey.greene@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 38,
+    "name": "Isaac Norton",
+    "avatarURL": null,
+    "email": "isaac.norton@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 39,
+    "name": "Jasmine Rhodes",
+    "avatarURL": null,
+    "email": "jasmine.rhodes@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 40,
+    "name": "Kyle Jennings",
+    "avatarURL": null,
+    "email": "kyle.jennings@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 41,
+    "name": "Luna McCarthy",
+    "avatarURL": null,
+    "email": "luna.mccarthy@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 42,
+    "name": "Mason Riley",
+    "avatarURL": null,
+    "email": "mason.riley@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 43,
+    "name": "Nora Simmons",
+    "avatarURL": null,
+    "email": "nora.simmons@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 44,
+    "name": "Owen Bishop",
+    "avatarURL": null,
+    "email": "owen.bishop@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 45,
+    "name": "Penelope Marsh",
+    "avatarURL": null,
+    "email": "penelope.marsh@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 46,
+    "name": "Quinn Vaughn",
+    "avatarURL": null,
+    "email": "quinn.vaughn@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 47,
+    "name": "Riley Goodwin",
+    "avatarURL": null,
+    "email": "riley.goodwin@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 48,
+    "name": "Sophie Lane",
+    "avatarURL": null,
+    "email": "sophie.lane@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 49,
+    "name": "Thomas Brewer",
+    "avatarURL": null,
+    "email": "thomas.brewer@example.com",
+    "password": "test@gmail.com"
+  },
+  {
+    "id": 50,
+    "name": "Uma Chandler",
+    "avatarURL": null,
+    "email": "uma.chandler@example.com",
+    "password": "test@gmail.com"
+  }
+]
