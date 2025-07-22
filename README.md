@@ -1,6 +1,6 @@
 # 🧠 Foodies API
 
-> **Foodies API** is the powerful backend that supports the [Foodies App](https://foodies-fe-8wvc.vercel.app) — a modern recipe-sharing platform built to bring food lovers together.
+> **Foodies API** is the powerful backend that supports the [Foodies App](foodies-react.vercel.app) — a modern recipe-sharing platform built to bring food lovers together.
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.MD)
 [![API Docs](https://img.shields.io/badge/api-docs-blue?logo=swagger)](https://foodies-nodejs.onrender.com/api-docs/)
