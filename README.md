@@ -3,7 +3,7 @@
 > **Foodies API** is the powerful backend that supports the [Foodies App](https://foodies-fe-8wvc.vercel.app) — a modern recipe-sharing platform built to bring food lovers together.
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.MD)
-[![API Docs](https://img.shields.io/badge/api-docs-blue?logo=swagger)](http://localhost:3000/api-docs/)
+[![API Docs](https://img.shields.io/badge/api-docs-blue?logo=swagger)](https://foodies-nodejs.onrender.com/api-docs/)
 
 > 🍽️ This is the brain behind the food — a clean, secure, and scalable RESTful API serving recipes, users, and tasty interactions!
 
@@ -31,7 +31,7 @@ The **Foodies API** is a RESTful backend service that powers everything in the F
 
 Check out our live Swagger UI to explore and test endpoints in your browser:
 
-> 🔗 **[Swagger Docs](http://localhost:3000/api-docs/)**
+> 🔗 **[Swagger Docs](https://foodies-nodejs.onrender.com/api-docs/)**
 
 Includes:
 
